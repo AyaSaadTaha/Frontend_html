@@ -7,15 +7,21 @@
     <!-- Bulma CSS CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <!-- Animate.css für Animationen -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
 <!-- Navigationsleiste -->
 <nav class="navbar is-fixed-top navbar-custom-bg" role="navigation" aria-label="main navigation">
     <div class="container">
         <div class="navbar-brand">
-            <a class="navbar-item has-text-white is-size-3 has-text-weight-bold" href="#">
-                <img src="dm.png" class="is-rounded logo">
+            <a class="navbar-item has-text-white is-size-2 has-text-weight-bold" href="#">
+                <div class="logo-container">
+                    <span class="logo-d">d</span>
+                    <span class="logo-m">m</span>
+                    <div class="logo-circle"></div>
+                </div>
             </a>
 
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -27,11 +33,11 @@
 
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-end">
-                <a class="navbar-item has-text-black is-size-5 has-text-weight-medium hover:has-text-purple-200" href="#">
+                <a href="index2.html"  class="navbar-item has-text-white is-size-6 has-text-weight-medium hover:has-text-purple-200">
                     Home
                 </a>
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link has-text-black is-size-5 has-text-weight-medium hover:has-text-purple-200">
+                    <a href="product.html" class="navbar-link has-text-white is-size-6 has-text-weight-medium hover:has-text-purple-200">
                         Products
                     </a>
 
@@ -49,10 +55,10 @@
                     </div>
                 </div>
 
-                <a class="navbar-item has-text-black is-size-5 has-text-weight-medium hover:has-text-purple-200" href="#">
+                <a href="ÜberUns.html" class="navbar-item has-text-white is-size-6 has-text-weight-medium hover:has-text-purple-200">
                     Über Uns
                 </a>
-                <a class="navbar-item has-text-black is-size-5 has-text-weight-medium hover:has-text-purple-200" href="#">
+                <a href="Kontakt.html" class="navbar-item has-text-white is-size-6 has-text-weight-medium hover:has-text-purple-200">
                     Kontakt
                 </a>
             </div>
@@ -60,7 +66,7 @@
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
-                        <a class="button  is-rounded has-text-weight-bold anmeld" href="login.html">
+                        <a class="button  is-rounded has-text-weight-bold anmeld" target="_blank" href="login.html" >
                             Anmelden
                         </a>
                     </div>
@@ -70,31 +76,49 @@
     </div>
 </nav>
 
-<!-- Header-Bereich mit Willkommensnachricht und Bild -->
+<!-- Header-Bereich (Hero Slider Simulation) -->
+<section class="hero is-medium hero-slider has-text-white is-fullheight-with-navbar">
+    <div class="hero-body p-0">
+        <div class="container is-fullhd hero-slide-content">
+            <div class="columns is-vcentered is-desktop is-gapless hero-slide-columns">
 
-<section class="hero is-medium hero-custom-bg has-text-white is-fullheight-with-navbar">
-    <div class="hero-body">
-        <div class="container">
-            <div class="columns is-vcentered is-desktop">
-                <div class="column is-half has-text-centered-mobile has-text-left-desktop">
-                    <h1 class="title is-1 has-text-white is-spaced">
-                        Willkommen bei dm-drogerie markt!
-                    </h1>
-                    <p class="subtitle is-4 has-text-white has-opacity-90">
-                        Entdecken Sie eine handverlesene Auswahl an hochwertigen Produkten, die Ihr Leben bereichern werden. Qualität und Zufriedenheit stehen bei uns an erster Stelle.
-                    </p>
+                <!-- Linke Spalte (Produktbilder) -->
+                <div class="column is-one-third product-image-column">
+                    <img src="p4.jpg" alt="Küchenhintergrund" class="product-bg-image">
+
+                    <!-- Platzhalter für die Mivolis Produkte (animiert) -->
+                    <div class="product-animation-container">
+                        <img src="p1.jpg" alt="Mivolis Verdauungsshot" class="product-image product-left animate__animated animate__fadeInLeft">
+                        <img src="p2.jpg" alt="Mivolis ProDarm Komplex" class="product-image product-right animate__animated animate__fadeInUp">
+                        <img src="p5.jpg" alt="Mivolis Logo" class="mivolis-logo-float animate__animated animate__zoomIn">
+                    </div>
+
+                    <!-- Navigation (Pfeile) - Im Bild links/rechts der Produkte -->
+                    <div class="slider-nav-arrows is-hidden-mobile">
+                        <button class="slider-arrow arrow-left"><i class="fas fa-chevron-left"></i></button>
+                        <button class="slider-arrow arrow-right"><i class="fas fa-chevron-right"></i></button>
+                    </div>
                 </div>
-                <div class="column is-half is-flex is-justify-content-center is-align-items-center">
-                    <div class="box is-shadowless has-background-light header-image-placeholder is-rounded">
-                        <img src="cover.png"
-                             alt="Webshop Header Bild"
-                             class="is-fullwidth is-fullheight is-object-cover is-rounded">
+
+                <!-- Rechte Spalte (Text und Call-to-Action) -->
+                <div class="column is-two-thirds hero-text-column">
+                    <div class="hero-text-box has-background-white animate__animated animate__fadeInRight">
+                        <h1 class="title is-2 has-text-dark is-spaced">
+                            Weil ein gutes Gefühl im <span class="has-text-info-dark">Glatteleder</span>
+                        </h1>
+                        <p class="subtitle is-4 has-text-grey-dark">
+                            <span class="icon-text has-text-info-dark">
+                                <span class="icon is-size-4"><i class="fas fa-arrow-right"></i></span>
+                                <span></span>
+                            </span>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 
 <!-- Inhaltsbereich mit Suchfeld und Produktvorschau -->
 
@@ -200,7 +224,7 @@
                             </div>
                             <p class="unit-price">0,05 l (105,00 € je 1 l)</p>
                             <p class="product-name">
-                                Sonnenschutzgel für Kopfhaut & Scheitel, LSF 50, 50 ml</p>
+                                Sonnenschutzgel für Kopfhaut, LSF 50, 50 ml</p>
                             <p class="product-brand">SUNDANCE</p>
                             <div class="star-rating">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star is-empty"></i>
@@ -306,7 +330,7 @@
                                 <a class="add-to-cart-button"><i class="fas fa-shopping-cart"></i></a>
                             </div>
                             <p class="unit-price">0,1125 kg (115,11 € je 1 kg)</p>
-                            <p class="product-name">Haarvitamine Ah-Mazing Hair Vitamin Biotin,..., 112,5 g</p>
+                            <p class="product-name">Haarvitamine Ah-Mazing Hair Vitamin, 112,5 g</p>
                             <p class="product-brand">Bears with benefits</p>
                             <div class="star-rating">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star is-empty"></i>
@@ -445,7 +469,7 @@
     <div class="container">
         <div class="columns is-multiline">
             <div class="column is-one-quarter">
-                <p class="title is-4 has-text-white">Mein Shop</p>
+                <p class="title is-4 has-text-white">Dm Shop</p>
                 <p class="has-text-grey-light">Ihr Online-Ziel für hochwertige Produkte und exzellenten Service.</p>
             </div>
 
@@ -509,6 +533,156 @@
                 });
             });
         }
+    });
+
+    // search script section
+    document.addEventListener('DOMContentLoaded', () => {
+        // Search functionality
+        const searchInput = document.querySelector('input[type="text"]');
+        const productCards = document.querySelectorAll('.product-card');
+
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+
+            productCards.forEach(card => {
+                const productName = card.querySelector('.product-name').textContent.toLowerCase();
+                const productBrand = card.querySelector('.product-brand').textContent.toLowerCase();
+
+                if (productName.includes(searchTerm) || productBrand.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    // Add animation for appearing
+                    card.classList.add('animate__animated', 'animate__fadeIn');
+                } else {
+                    // Add animation for disappearing
+                    card.classList.add('animate__animated', 'animate__fadeOut');
+                    // Hide after animation completes
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                        card.classList.remove('animate__fadeOut');
+                    }, 300);
+                }
+            });
+        });
+
+        // Reset search when clicking on category headers
+        const categoryHeaders = document.querySelectorAll('.product_header');
+        categoryHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                searchInput.value = '';
+                productCards.forEach(card => {
+                    card.style.display = 'block';
+                    card.classList.add('animate__animated', 'animate__fadeIn');
+                });
+            });
+        });
+    });
+
+
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Slider Funktionalität
+        const slider = document.querySelector('.hero-slider');
+        const slides = [
+            {
+                bgImage: 'p4.jpg',
+                products: [
+                    {img: 'p1.jpg', class: 'product-left', animation: 'fadeInLeft'},
+                    {img: 'p2.jpg', class: 'product-right', animation: 'fadeInUp'}
+                ],
+                logo: 'p5.jpg',
+                title: 'Weil ein gutes Gefühl im <span class="has-text-info-dark">Glatteleder</span> beginnt',
+                subtitle: 'Zu pflege gesicht und körper'
+            },
+            {
+                bgImage: 'img_6.png',
+                products: [
+                    {img: 'img_7.png', class: 'product-left', animation: 'fadeInLeft'},
+                    {img: 'img_9.png', class: 'product-right', animation: 'fadeInUp'}
+                ],
+                logo: 'dm.png',
+                title: 'Neue <span class="has-text-info-dark">Gesundheitsprodukt</span> entdecken',
+                subtitle: 'Zu unseren Bestsellern'
+            },
+            // Weitere Slides können hier hinzugefügt werden
+        ];
+
+        let currentSlide = 0;
+        const arrowLeft = document.querySelector('.arrow-left');
+        const arrowRight = document.querySelector('.arrow-right');
+
+        function updateSlide(index) {
+            const slide = slides[index];
+            const bgImage = document.querySelector('.product-bg-image');
+            const productContainer = document.querySelector('.product-animation-container');
+            const textBox = document.querySelector('.hero-text-box');
+
+            // Hintergrundbild aktualisieren
+            bgImage.src = slide.bgImage;
+
+            // Produkte aktualisieren
+            productContainer.innerHTML = '';
+            slide.products.forEach(product => {
+                const img = document.createElement('img');
+                img.src = product.img;
+                img.alt = "Produkt";
+                img.className = `product-image ${product.class} animate__animated animate__${product.animation}`;
+                productContainer.appendChild(img);
+            });
+
+            // Logo hinzufügen
+            const logo = document.createElement('img');
+            logo.src = slide.logo;
+            logo.alt = "Logo";
+            logo.className = 'mivolis-logo-float animate__animated animate__zoomIn';
+            productContainer.appendChild(logo);
+
+            // Text aktualisieren
+            textBox.querySelector('.title').innerHTML = slide.title;
+            textBox.querySelector('.subtitle span').textContent = slide.subtitle;
+
+            // Animationen auslösen
+            textBox.classList.remove('animate__fadeInRight');
+            void textBox.offsetWidth; // Trigger reflow
+            textBox.classList.add('animate__fadeInRight');
+        }
+
+        arrowLeft.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateSlide(currentSlide);
+        });
+
+        arrowRight.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlide(currentSlide);
+        });
+
+        // Automatischer Wechsel alle 5 Sekunden
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlide(currentSlide);
+        }, 5000);
+
+        // Initialen Slide laden
+        updateSlide(0);
+
+        // Fügen Sie dies zum JavaScript hinzu
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.product-card, .product_header');
+
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+
+                if (elementPosition < screenPosition) {
+                    element.classList.add('animate__animated', 'animate__fadeInUp');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Initial aufrufen
     });
 </script>
 </body>
