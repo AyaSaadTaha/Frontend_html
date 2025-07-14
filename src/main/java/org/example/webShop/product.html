@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mein Webshop</title>
+    <!-- Bulma CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Animate.css für Animationen -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+<!-- Navigationsleiste -->
+<nav class="navbar is-fixed-top navbar-custom-bg" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item has-text-white is-size-2 has-text-weight-bold" href="#">
+                <div class="logo-container">
+                    <span class="logo-d">d</span>
+                    <span class="logo-m">m</span>
+                    <div class="logo-circle"></div>
+                </div>
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-end">
+                <a href="index2.html"  class="navbar-item has-text-white is-size-6 has-text-weight-medium hover:has-text-purple-200">
+                    Home
+                </a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a href="product.html" class="navbar-link has-text-white is-size-6 has-text-weight-medium hover:has-text-purple-200">
+                        Products
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="#Pflege">
+                            Pflege
+                        </a>
+                        <a class="navbar-item is-selected" href="#Haare">
+                            Haare
+                        </a>
+                        <a class="navbar-item" href="#Gesundheit">
+                            Gesundheit
+                        </a>
+
+                    </div>
+                </div>
+
+                <a href="ÜberUns.html" class="navbar-item has-text-white is-size-6 has-text-weight-medium hover:has-text-purple-200">
+                    Über Uns
+                </a>
+                <a href="Kontakt.html" class="navbar-item has-text-white is-size-6 has-text-weight-medium hover:has-text-purple-200">
+                    Kontakt
+                </a>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button  is-rounded has-text-weight-bold anmeld" target="_blank" href="login.html" >
+                            Anmelden
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Inhaltsbereich mit Suchfeld und Produktvorschau -->
+
+<main class="section" style="margin-top: 70px">
+    <div class="container">
+        <div class="level is-mobile is-flex-direction-column-mobile is-align-items-flex-start-mobile mb-6 p-3 has-background-white is-rounded-large product-card-custom-shadow">
+            <div class="level-left">
+                <div class="level-item">
+                    <h2 class="title is-2 has-text-grey-darker mb-4-mobile">Alle Produkte</h2>
+                </div>
+            </div>
+            <div class="level-right is-fullwidth-mobile">
+                <div class="level-item is-fullwidth-mobile">
+                    <div class="control is-expanded">
+                        <input class="input is-medium is-rounded" type="text" placeholder="Produkte suchen...">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="Pflege">
+            <header class="product_header">Pflege</header>
+            <div class="columns is-multiline is-desktop">
+                <!-- Beispiel-Produktkarte 1 (Tuchmaske Tonerde) -->
+                <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile">
+                    <div class="card product-card product-card-custom-shadow">
+                        <i class="far fa-heart favorite-icon"></i>
+                        <div class="product-image-wrapper">
+                            <span class="brand-logo-overlay">Schaebens</span>
+                            <img src="img.png" alt="Tuchmaske Tonerde">
+                        </div>
+                        <div class="card-content">
+                            <div class="price-info">
+                                <p class="current-price">1,45 €</p>
+                                <a class="add-to-cart-button"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                            <p class="unit-price">1 St (1,45 € je 1 St)</p>
+                            <p class="product-name">Tuchmaske Tonerde</p>
+                            <p class="product-brand">Schaebens</p>
+                            <div class="star-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star is-empty"></i>
+                                <span class="rating-count">(29)</span>
+                            </div>
+                            <div class="availability-info">
+                                <span class="icon"><i class="fas fa-check-circle"></i></span>
+                                <span>Lieferbar</span>
+                            </div>
+                            <div class="store-select-link">
+                                <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                                <span>dm-Markt wählen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beispiel-Produktkarte 2 (Deocreme Sensitive) -->
+                <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile">
+                    <div class="card product-card product-card-custom-shadow">
+                        <i class="far fa-heart favorite-icon"></i>
+                        <div class="product-image-wrapper">
+                            <span class="brand-logo-overlay">Balea</span>
+                            <img src="img_1.png" alt="Tuchmaske Tonerde">
+                        </div>
+                        <div class="card-content">
+                            <div class="price-info">
+                                <p class="current-price">1,75 €</p>
+                                <a class="add-to-cart-button"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                            <p class="unit-price">0,05 l (35,00 € je 1 l)</p>
+                            <p class="product-name">Deocreme Sensitive, 50 ml</p>
+                            <p class="product-brand">Balea</p>
+                            <div class="star-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                <span class="rating-count">(31)</span>
+                            </div>
+                            <div class="availability-info">
+                                <span class="icon"><i class="fas fa-check-circle"></i></span>
+                                <span>Lieferbar</span>
+                            </div>
+                            <div class="store-select-link">
+                                <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                                <span>dm-Markt wählen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beispiel-Produktkarte 3 (Slipeinlagen Cotton) -->
+                <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile">
+                    <div class="card product-card product-card-custom-shadow">
+                        <i class="far fa-heart favorite-icon"></i>
+                        <div class="product-image-wrapper">
+                            <span class="brand-logo-overlay">SUNDANCE</span>
+                            <img src="img_2.png" alt="Tuchmaske Tonerde">
+                        </div>
+                        <div class="card-content">
+                            <div class="price-info">
+                                <p class="current-price">5,25€</p>
+                                <a class="add-to-cart-button"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                            <p class="unit-price">0,05 l (105,00 € je 1 l)</p>
+                            <p class="product-name">
+                                Sonnenschutzgel für Kopfhaut, LSF 50, 50 ml</p>
+                            <p class="product-brand">SUNDANCE</p>
+                            <div class="star-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star is-empty"></i>
+                                <span class="rating-count">(38)</span>
+                            </div>
+                            <div class="availability-info">
+                                <span class="icon"><i class="fas fa-check-circle"></i></span>
+                                <span>Lieferbar</span>
+                            </div>
+                            <div class="store-select-link">
+                                <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                                <span>dm-Markt wählen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile">
+                    <div class="card product-card product-card-custom-shadow">
+                        <i class="far fa-heart favorite-icon"></i>
+                        <div class="product-image-wrapper">
+                            <span class="brand-logo-overlay">SUNDANCE</span>
+                            <img src="img_2.png" alt="Tuchmaske Tonerde">
+                        </div>
+                        <div class="card-content">
+                            <div class="price-info">
+                                <p class="current-price">5,25€</p>
+                                <a class="add-to-cart-button"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                            <p class="unit-price">0,05 l (105,00 € je 1 l)</p>
+                            <p class="product-name">
+                                Sonnenschutzgel für Kopfhaut, LSF 50, 50 ml</p>
+                            <p class="product-brand">SUNDANCE</p>
+                            <div class="star-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star is-empty"></i>
+                                <span class="rating-count">(38)</span>
+                            </div>
+                            <div class="availability-info">
+                                <span class="icon"><i class="fas fa-check-circle"></i></span>
+                                <span>Lieferbar</span>
+                            </div>
+                            <div class="store-select-link">
+                                <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                                <span>dm-Markt wählen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beispiel-Produktkarte 2 (Deocreme Sensitive) -->
+                <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile">
+                    <div class="card product-card product-card-custom-shadow">
+                        <i class="far fa-heart favorite-icon"></i>
+                        <div class="product-image-wrapper">
+                            <span class="brand-logo-overlay">Balea</span>
+                            <img src="img_1.png" alt="Tuchmaske Tonerde">
+                        </div>
+                        <div class="card-content">
+                            <div class="price-info">
+                                <p class="current-price">1,75 €</p>
+                                <a class="add-to-cart-button"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                            <p class="unit-price">0,05 l (35,00 € je 1 l)</p>
+                            <p class="product-name">Deocreme Sensitive, 50 ml</p>
+                            <p class="product-brand">Balea</p>
+                            <div class="star-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                <span class="rating-count">(31)</span>
+                            </div>
+                            <div class="availability-info">
+                                <span class="icon"><i class="fas fa-check-circle"></i></span>
+                                <span>Lieferbar</span>
+                            </div>
+                            <div class="store-select-link">
+                                <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                                <span>dm-Markt wählen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Beispiel-Produktkarte 1 (Tuchmaske Tonerde) -->
+                <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile">
+                    <div class="card product-card product-card-custom-shadow">
+                        <i class="far fa-heart favorite-icon"></i>
+                        <div class="product-image-wrapper">
+                            <span class="brand-logo-overlay">Schaebens</span>
+                            <img src="img.png" alt="Tuchmaske Tonerde">
+                        </div>
+                        <div class="card-content">
+                            <div class="price-info">
+                                <p class="current-price">1,45 €</p>
+                                <a class="add-to-cart-button"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                            <p class="unit-price">1 St (1,45 € je 1 St)</p>
+                            <p class="product-name">Tuchmaske Tonerde</p>
+                            <p class="product-brand">Schaebens</p>
+                            <div class="star-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star is-empty"></i>
+                                <span class="rating-count">(29)</span>
+                            </div>
+                            <div class="availability-info">
+                                <span class="icon"><i class="fas fa-check-circle"></i></span>
+                                <span>Lieferbar</span>
+                            </div>
+                            <div class="store-select-link">
+                                <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                                <span>dm-Markt wählen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fügen Sie bei Bedarf weitere Produktkarten hinzu -->
+            </div>
+        </div><br><br>
+        <div id="Haare">
+            <header class="product_header">Haare</header>
+            <div class="columns is-multiline is-desktop">
+                <!-- Beispiel-Produktkarte 1 (Tuchmaske Tonerde) -->
+                <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile">
+                    <div class="card product-card product-card-custom-shadow">
+                        <i class="far fa-heart favorite-icon"></i>
+                        <div class="product-image-wrapper">
+                            <span class="brand-logo-overlay">ebelin</span>
+                            <img src="img_3.png" alt="Tuchmaske Tonerde">
+                        </div>
+                        <div class="card-content">
+                            <div class="price-info">
+                                <p class="current-price">7,95 €</p>
+                                <a class="add-to-cart-button"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                            <p class="unit-price"> 1 St (7,95 € je 1 St)</p>
+                            <p class="product-name">Haarbürste Anti-Haarverlust, 1 St</p>
+                            <p class="product-brand">ebelin PROFESSIONAL</p>
+                            <div class="star-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star is-empty"></i>
+                                <span class="rating-count">(29)</span>
+                            </div>
+                            <div class="availability-info">
+                                <span class="icon"><i class="fas fa-check-circle"></i></span>
+                                <span>Lieferbar</span>
+                            </div>
+                            <div class="store-select-link">
+                                <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                                <span>dm-Markt wählen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beispiel-Produktkarte 2 (Deocreme Sensitive) -->
+                <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile">
+                    <div class="card product-card product-card-custom-shadow">
+                        <i class="far fa-heart favorite-icon"></i>
+                        <div class="product-image-wrapper">
+                            <span class="brand-logo-overlay">Balea</span>
+                            <img src="img_4.png" alt="Tuchmaske Tonerde">
+                        </div>
+                        <div class="card-content">
+                            <div class="price-info">
+                                <p class="current-price">0,65 €</p>
+                                <a class="add-to-cart-button"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                            <p class="unit-price">0,3 l (2,17 € je 1 l)</p>
+                            <p class="product-name">Shampoo Farbglanz, 300 ml</p>
+                            <p class="product-brand">Balea</p>
+                            <div class="star-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                <span class="rating-count">(31)</span>
+                            </div>
+                            <div class="availability-info">
+                                <span class="icon"><i class="fas fa-check-circle"></i></span>
+                                <span>Lieferbar</span>
+                            </div>
+                            <div class="store-select-link">
+                                <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                                <span>dm-Markt wählen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beispiel-Produktkarte 3 (Slipeinlagen Cotton) -->
+                <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile">
+                    <div class="card product-card product-card-custom-shadow">
+                        <i class="far fa-heart favorite-icon"></i>
+                        <div class="product-image-wrapper">
+                            <span class="brand-logo-overlay">Bears</span>
+                            <img src="img_5.png" alt="Tuchmaske Tonerde">
+                        </div>
+                        <div class="card-content">
+                            <div class="price-info">
+                                <p class="current-price">12,95 €</p>
+                                <a class="add-to-cart-button"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                            <p class="unit-price">0,1125 kg (115,11 € je 1 kg)</p>
+                            <p class="product-name">Haarvitamine Ah-Mazing Hair Vitamin 112,5 g</p>
+                            <p class="product-brand">Bears with benefits</p>
+                            <div class="star-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star is-empty"></i>
+                                <span class="rating-count">(38)</span>
+                            </div>
+                            <div class="availability-info">
+                                <span class="icon"><i class="fas fa-check-circle"></i></span>
+                                <span>Lieferbar</span>
+                            </div>
+                            <div class="store-select-link">
+                                <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                                <span>dm-Markt wählen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beispiel-Produktkarte 3 (Slipeinlagen Cotton) -->
+                <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile">
+                    <div class="card product-card product-card-custom-shadow">
+                        <i class="far fa-heart favorite-icon"></i>
+                        <div class="product-image-wrapper">
+                            <span class="brand-logo-overlay">Bears</span>
+                            <img src="img_5.png" alt="Tuchmaske Tonerde">
+                        </div>
+                        <div class="card-content">
+                            <div class="price-info">
+                                <p class="current-price">12,95 €</p>
+                                <a class="add-to-cart-button"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                            <p class="unit-price">0,1125 kg (115,11 € je 1 kg)</p>
+                            <p class="product-name">Haarvitamine Ah-Mazing Hair Vitamin 112,5 g</p>
+                            <p class="product-brand">Bears with benefits</p>
+                            <div class="star-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star is-empty"></i>
+                                <span class="rating-count">(38)</span>
+                            </div>
+                            <div class="availability-info">
+                                <span class="icon"><i class="fas fa-check-circle"></i></span>
+                                <span>Lieferbar</span>
+                            </div>
+                            <div class="store-select-link">
+                                <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                                <span>dm-Markt wählen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Beispiel-Produktkarte 2 (Deocreme Sensitive) -->
+                <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile">
+                    <div class="card product-card product-card-custom-shadow">
+                        <i class="far fa-heart favorite-icon"></i>
+                        <div class="product-image-wrapper">
+                            <span class="brand-logo-overlay">Balea</span>
+                            <img src="img_4.png" alt="Tuchmaske Tonerde">
+                        </div>
+                        <div class="card-content">
+                            <div class="price-info">
+                                <p class="current-price">0,65 €</p>
+                                <a class="add-to-cart-button"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                            <p class="unit-price">0,3 l (2,17 € je 1 l)</p>
+                            <p class="product-name">Shampoo Farbglanz, 300 ml</p>
+                            <p class="product-brand">Balea</p>
+                            <div class="star-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                <span class="rating-count">(31)</span>
+                            </div>
+                            <div class="availability-info">
+                                <span class="icon"><i class="fas fa-check-circle"></i></span>
+                                <span>Lieferbar</span>
+                            </div>
+                            <div class="store-select-link">
+                                <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                                <span>dm-Markt wählen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Beispiel-Produktkarte 1 (Tuchmaske Tonerde) -->
+                <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile">
+                    <div class="card product-card product-card-custom-shadow">
+                        <i class="far fa-heart favorite-icon"></i>
+                        <div class="product-image-wrapper">
+                            <span class="brand-logo-overlay">ebelin</span>
+                            <img src="img_3.png" alt="Tuchmaske Tonerde">
+                        </div>
+                        <div class="card-content">
+                            <div class="price-info">
+                                <p class="current-price">7,95 €</p>
+                                <a class="add-to-cart-button"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                            <p class="unit-price"> 1 St (7,95 € je 1 St)</p>
+                            <p class="product-name">Haarbürste Anti-Haarverlust, 1 St</p>
+                            <p class="product-brand">ebelin PROFESSIONAL</p>
+                            <div class="star-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star is-empty"></i>
+                                <span class="rating-count">(29)</span>
+                            </div>
+                            <div class="availability-info">
+                                <span class="icon"><i class="fas fa-check-circle"></i></span>
+                                <span>Lieferbar</span>
+                            </div>
+                            <div class="store-select-link">
+                                <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                                <span>dm-Markt wählen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fügen Sie bei Bedarf weitere Produktkarten hinzu -->
+            </div>
+        </div><br><br>
+        <div id="Gesundheit">
+            <header class="product_header">Gesundheit</header>
+            <div class="columns is-multiline is-desktop">
+                <!-- Beispiel-Produktkarte 1 (Tuchmaske Tonerde) -->
+                <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile">
+                    <div class="card product-card product-card-custom-shadow">
+                        <i class="far fa-heart favorite-icon"></i>
+                        <div class="product-image-wrapper">
+                            <span class="brand-logo-overlay">Sensodyne</span>
+                            <img src="img_6.png" alt="Tuchmaske Tonerde">
+                        </div>
+                        <div class="card-content">
+                            <div class="price-info">
+                                <p class="current-price">6,95 €</p>
+                                <a class="add-to-cart-button"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                            <p class="unit-price">0,075 l (92,67 € je 1 l)</p>
+                            <p class="product-name">Zahnpasta Clinical Repair, 75 ml</p>
+                            <p class="product-brand">Sensodyne</p>
+                            <div class="star-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star is-empty"></i>
+                                <span class="rating-count">(29)</span>
+                            </div>
+
+                            <div class="availability-info">
+                                <span class="icon"><i class="fas fa-check-circle"></i></span>
+                                <span>Lieferbar</span>
+                            </div>
+                            <div class="store-select-link">
+                                <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                                <span>dm-Markt wählen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beispiel-Produktkarte 2 (Deocreme Sensitive) -->
+                <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile">
+                    <div class="card product-card product-card-custom-shadow">
+                        <i class="far fa-heart favorite-icon"></i>
+                        <div class="product-image-wrapper">
+                            <span class="brand-logo-overlay">Mivolis</span>
+                            <img src="img_7.png" alt="Tuchmaske Tonerde">
+                        </div>
+                        <div class="card-content">
+                            <div class="price-info">
+                                <p class="current-price">4,45 €</p>
+                                <a class="add-to-cart-button"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                            <p class="unit-price"> 0,12 kg (37,08 € je 1 kg)</p>
+                            <p class="product-name">Magnesium-Citrat, Granulat 20 Sticks, 120 g</p>
+                            <p class="product-brand">Mivolis</p>
+                            <div class="star-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                <span class="rating-count">(31)</span>
+                            </div>
+                            <div class="availability-info">
+                                <span class="icon"><i class="fas fa-check-circle"></i></span>
+                                <span>Lieferbar</span>
+                            </div>
+                            <div class="store-select-link">
+                                <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                                <span>dm-Markt wählen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beispiel-Produktkarte 3 (Slipeinlagen Cotton) -->
+                <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile">
+                    <div class="card product-card product-card-custom-shadow">
+                        <i class="far fa-heart favorite-icon"></i>
+                        <div class="product-image-wrapper">
+                            <span class="brand-logo-overlay">VISIOMAX</span>
+                            <img src="img_8.png" alt="Tuchmaske Tonerde">
+                        </div>
+                        <div class="card-content">
+                            <div class="price-info">
+                                <p class="current-price">6,45 €</p>
+                                <a class="add-to-cart-button"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                            <p class="unit-price">0,015 l (430,00 € je 1 l)</p>
+                            <p class="product-name">Augentropfen mit 0,1% Hyaluron, 15 ml</p>
+                            <p class="product-brand">VISIOMAX</p>
+                            <div class="star-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star is-empty"></i>
+                                <span class="rating-count">(38)</span>
+                            </div>
+                            <div class="availability-info">
+                                <span class="icon"><i class="fas fa-check-circle"></i></span>
+                                <span>Lieferbar</span>
+                            </div>
+                            <div class="store-select-link">
+                                <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                                <span>dm-Markt wählen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beispiel-Produktkarte 3 (Slipeinlagen Cotton) -->
+                <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile">
+                    <div class="card product-card product-card-custom-shadow">
+                        <i class="far fa-heart favorite-icon"></i>
+                        <div class="product-image-wrapper">
+                            <span class="brand-logo-overlay">VISIOMAX</span>
+                            <img src="img_9.png" alt="Tuchmaske Tonerde">
+                        </div>
+                        <div class="card-content">
+                            <div class="price-info">
+                                <p class="current-price">6,45 €</p>
+                                <a class="add-to-cart-button"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                            <p class="unit-price">0,015 l (430,00 € je 1 l)</p>
+                            <p class="product-name">Augentropfen mit 0,1% Hyaluron, 15 ml</p>
+                            <p class="product-brand">VISIOMAX</p>
+                            <div class="star-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star is-empty"></i>
+                                <span class="rating-count">(38)</span>
+                            </div>
+                            <div class="availability-info">
+                                <span class="icon"><i class="fas fa-check-circle"></i></span>
+                                <span>Lieferbar</span>
+                            </div>
+                            <div class="store-select-link">
+                                <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                                <span>dm-Markt wählen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Beispiel-Produktkarte 2 (Deocreme Sensitive) -->
+                <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile">
+                    <div class="card product-card product-card-custom-shadow">
+                        <i class="far fa-heart favorite-icon"></i>
+                        <div class="product-image-wrapper">
+                            <span class="brand-logo-overlay">Mivolis</span>
+                            <img src="img_11.png" alt="Tuchmaske Tonerde">
+                        </div>
+                        <div class="card-content">
+                            <div class="price-info">
+                                <p class="current-price">4,45 €</p>
+                                <a class="add-to-cart-button"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                            <p class="unit-price"> 0,12 kg (37,08 € je 1 kg)</p>
+                            <p class="product-name">Magnesium-Citrat, Granulat 20 Sticks, 120 g</p>
+                            <p class="product-brand">Mivolis</p>
+                            <div class="star-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                <span class="rating-count">(31)</span>
+                            </div>
+                            <div class="availability-info">
+                                <span class="icon"><i class="fas fa-check-circle"></i></span>
+                                <span>Lieferbar</span>
+                            </div>
+                            <div class="store-select-link">
+                                <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                                <span>dm-Markt wählen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Beispiel-Produktkarte 1 (Tuchmaske Tonerde) -->
+                <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile">
+                    <div class="card product-card product-card-custom-shadow">
+                        <i class="far fa-heart favorite-icon"></i>
+                        <div class="product-image-wrapper">
+                            <span class="brand-logo-overlay">Sensodyne</span>
+                            <img src="img_10.png" alt="Tuchmaske Tonerde">
+                        </div>
+                        <div class="card-content">
+                            <div class="price-info">
+                                <p class="current-price">6,95 €</p>
+                                <a class="add-to-cart-button"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                            <p class="unit-price">0,075 l (92,67 € je 1 l)</p>
+                            <p class="product-name">Zahnpasta Clinical Repair, 75 ml</p>
+                            <p class="product-brand">Sensodyne</p>
+                            <div class="star-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star is-empty"></i>
+                                <span class="rating-count">(29)</span>
+                            </div>
+
+                            <div class="availability-info">
+                                <span class="icon"><i class="fas fa-check-circle"></i></span>
+                                <span>Lieferbar</span>
+                            </div>
+                            <div class="store-select-link">
+                                <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                                <span>dm-Markt wählen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fügen Sie bei Bedarf weitere Produktkarten hinzu -->
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+<!-- Footer-Bereich -->
+<footer class="footer footer-custom-bg has-text-white">
+    <div class="container">
+        <div class="columns is-multiline">
+            <div class="column is-one-quarter">
+                <p class="title is-4 has-text-white">Dm Shop</p>
+                <p class="has-text-grey-light">Ihr Online-Ziel für hochwertige Produkte und exzellenten Service.</p>
+            </div>
+
+            <div class="column is-one-quarter">
+                <p class="title is-5 has-text-white">Informationen</p>
+                <ul>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">Impressum</a></li>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">AGB</a></li>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">Datenschutz</a></li>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">Widerrufsrecht</a></li>
+                </ul>
+            </div>
+
+            <div class="column is-one-quarter">
+                <p class="title is-5 has-text-white">Kundenservice</p>
+                <ul>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">Kontakt</a></li>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">FAQ</a></li>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">Versand & Lieferung</a></li>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">Rücksendungen</a></li>
+                </ul>
+            </div>
+
+            <div class="column is-one-quarter">
+                <p class="title is-5 has-text-white">Folgen Sie uns</p>
+                <ul>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">Instagram</a></li>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">Facebook</a></li>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">Twitter</a></li>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Copyright-Informationen -->
+<div class="has-text-centered py-4 copyright-custom-bg has-text-grey-light is-size-7">
+    <div class="container">
+        &copy; 2025 dm-drogerie markt GmbH + Co. KG
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+        // Check if there are any navbar burgers
+        if ($navbarBurgers.length > 0) {
+            // Add a click event on each of them
+            $navbarBurgers.forEach(el => {
+                el.addEventListener('click', () => {
+                    // Get the target from the "data-target" attribute
+                    const target = el.dataset.target;
+                    const $target = document.getElementById(target);
+
+                    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                    el.classList.toggle('is-active');
+                    $target.classList.toggle('is-active');
+                });
+            });
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Search functionality
+        const searchInput = document.querySelector('input[type="text"]');
+        const productCards = document.querySelectorAll('.product-card');
+
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+
+            productCards.forEach(card => {
+                const productName = card.querySelector('.product-name').textContent.toLowerCase();
+                const productBrand = card.querySelector('.product-brand').textContent.toLowerCase();
+
+                if (productName.includes(searchTerm) || productBrand.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    // Add animation for appearing
+                    card.classList.add('animate__animated', 'animate__fadeIn');
+                } else {
+                    // Add animation for disappearing
+                    card.classList.add('animate__animated', 'animate__fadeOut');
+                    // Hide after animation completes
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                        card.classList.remove('animate__fadeOut');
+                    }, 300);
+                }
+            });
+        });
+
+        // Reset search when clicking on category headers
+        const categoryHeaders = document.querySelectorAll('.product_header');
+        categoryHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                searchInput.value = '';
+                productCards.forEach(card => {
+                    card.style.display = 'block';
+                    card.classList.add('animate__animated', 'animate__fadeIn');
+                });
+            });
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Slider Funktionalität
+        const slider = document.querySelector('.hero-slider');
+        const slides = [
+            {
+                bgImage: 'p4.jpg',
+                products: [
+                    {img: 'p1.jpg', class: 'product-left', animation: 'fadeInLeft'},
+                    {img: 'p2.jpg', class: 'product-right', animation: 'fadeInUp'}
+                ],
+                logo: 'p3.jpg',
+                title: 'Weil ein gutes Gefühl im <span class="has-text-info-dark">Bauch</span> beginnt',
+                subtitle: 'Zu Mivolis für Magen & Darm'
+            },
+            {
+                bgImage: 'img_6.png',
+                products: [
+                    {img: 'img_7.png', class: 'product-left', animation: 'fadeInLeft'},
+                    {img: 'img_8.png', class: 'product-right', animation: 'fadeInUp'}
+                ],
+                logo: 'dm.png',
+                title: 'Neue <span class="has-text-info-dark">Gesundheitsprodukte</span> entdecken',
+                subtitle: 'Zu unseren Bestsellern'
+            },
+            // Weitere Slides können hier hinzugefügt werden
+        ];
+
+        let currentSlide = 0;
+        const arrowLeft = document.querySelector('.arrow-left');
+        const arrowRight = document.querySelector('.arrow-right');
+
+        function updateSlide(index) {
+            const slide = slides[index];
+            const bgImage = document.querySelector('.product-bg-image');
+            const productContainer = document.querySelector('.product-animation-container');
+            const textBox = document.querySelector('.hero-text-box');
+
+            // Hintergrundbild aktualisieren
+            bgImage.src = slide.bgImage;
+
+            // Produkte aktualisieren
+            productContainer.innerHTML = '';
+            slide.products.forEach(product => {
+                const img = document.createElement('img');
+                img.src = product.img;
+                img.alt = "Produkt";
+                img.className = `product-image ${product.class} animate__animated animate__${product.animation}`;
+                productContainer.appendChild(img);
+            });
+
+            // Logo hinzufügen
+            const logo = document.createElement('img');
+            logo.src = slide.logo;
+            logo.alt = "Logo";
+            logo.className = 'mivolis-logo-float animate__animated animate__zoomIn';
+            productContainer.appendChild(logo);
+
+            // Text aktualisieren
+            textBox.querySelector('.title').innerHTML = slide.title;
+            textBox.querySelector('.subtitle span').textContent = slide.subtitle;
+
+            // Animationen auslösen
+            textBox.classList.remove('animate__fadeInRight');
+            void textBox.offsetWidth; // Trigger reflow
+            textBox.classList.add('animate__fadeInRight');
+        }
+
+        arrowLeft.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateSlide(currentSlide);
+        });
+
+        arrowRight.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlide(currentSlide);
+        });
+
+        // Automatischer Wechsel alle 5 Sekunden
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlide(currentSlide);
+        }, 5000);
+
+        // Initialen Slide laden
+        updateSlide(0);
+
+        // Fügen Sie dies zum JavaScript hinzu
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.product-card, .product_header');
+
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+
+                if (elementPosition < screenPosition) {
+                    element.classList.add('animate__animated', 'animate__fadeInUp');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Initial aufrufen
+    });
+</script>
+</body>
+</html>

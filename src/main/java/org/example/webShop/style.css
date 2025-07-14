@@ -1,0 +1,430 @@
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #f5f5f5; /* Bulma default background */
+}
+.anmeld{
+    background: linear-gradient(to bottom right, #4c51bf, #2a4365);
+}
+
+.hero-custom-bg {
+    background-color: #2c3e50;
+}
+
+.footer-custom-bg {
+    background-color: #2c3e50; /* Dark blue-gray */
+}
+
+.copyright-custom-bg {
+    background-color: #212f3d; /* Even darker blue-gray */
+}
+
+.logo{
+    width: 60px;
+    height: 100px;
+}
+
+.product-card-custom-shadow {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.product-card-custom-shadow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.header-image-container {
+    position: relative;
+    height: 400px; /* Angepasst an das Beispielbild */
+    overflow: hidden;
+    background-color: #1a1a1a; /* Dunkler Hintergrund für den Bildbereich */
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.header-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center; /* Bild rechts positionieren */
+}
+
+.header-product-overlay {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.header-product-item {
+    background-color: #333; /* Dunkler Hintergrund für Produkte im Header */
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    position: relative;
+    width: 120px; /* Feste Breite für Produktboxen */
+}
+
+.header-product-item .product-thumb {
+    width: 80px;
+    height: 80px;
+    background-color: #555;
+    margin: 0 auto 8px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+}
+
+.header-product-item .tag {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7em;
+    padding: 2px 8px;
+    border-radius: 9999px; /* Pill-shape */
+    font-weight: bold;
+}
+
+.header-product-item .tag.is-warning {
+    background-color: #ffdd57; /* Gelb für LIMITED */
+    color: #363636;
+}
+
+.header-product-item .tag.is-danger {
+    background-color: #ff3860; /* Rot für NEU */
+    color: white;
+}
+
+.product-card {
+    position: relative;
+    border: 1px solid #dbdbdb; /* Leichter Rand */
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: white;
+    padding-bottom: 1rem; /* Platz für die unteren Infos */
+}
+
+.product-card .tag.is-new {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ff3860; /* Rot für NEU */
+    color: white;
+    font-weight: bold;
+    z-index: 10;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+}
+
+.product-card .favorite-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #b5b5b5; /* Grau für Herz */
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.2s ease-in-out;
+}
+
+.product-card .favorite-icon:hover {
+    color: #ff3860; /* Rot beim Hover */
+}
+
+.product-card .product-image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 75%; /* 4:3 Aspect Ratio (300/400) */
+    overflow: hidden;
+}
+
+.product-card .product-image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Bild vollständig sichtbar halten */
+    padding: 1rem; /* Innenabstand für das Bild */
+}
+
+.product-card .brand-logo-overlay {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 4px;
+    z-index: 11; /* Über dem Bild */
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.product-card .card-content {
+    padding: 1rem;
+    text-align: left;
+}
+
+.product-card .price-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 0.5rem;
+}
+
+.product-card .current-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #363636; /* Dunkelgrau */
+    line-height: 1;
+}
+
+.product-card .unit-price {
+    font-size: 0.75rem;
+    color: #7a7a7a;
+    line-height: 1;
+}
+
+.product-card .product-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #363636;
+    margin-bottom: 0.25rem;
+    min-height: 2.5rem; /* Um Zeilenumbruch zu vermeiden */
+}
+
+.product-card .product-brand {
+    font-size: 0.85rem;
+    color: #7a7a7a;
+    margin-bottom: 0.5rem;
+}
+
+.product-card .star-rating {
+    color: #ffdd57; /* Gelb für Sterne */
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+}
+
+.product-card .star-rating .fa-star.is-empty {
+    color: #dbdbdb; /* Leere Sterne grau */
+}
+
+.product-card .rating-count {
+    font-size: 0.8rem;
+    color: #7a7a7a;
+    margin-left: 5px;
+}
+
+.product-card .add-to-cart-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: #3273dc; /* Bulma primary blue */
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.product-card .add-to-cart-button:hover {
+    background-color: #276cda;
+}
+
+.product-card .availability-info {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #4a4a4a;
+    margin-top: 1rem;
+    padding-left: 1rem; /* Einrücken wie im Beispiel */
+}
+
+.product-card .availability-info .icon {
+    margin-right: 0.5rem;
+    color: #23d160; /* Grün für Haken */
+}
+
+.product-card .store-select-link {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #3273dc; /* Blau für Link */
+    margin-top: 0.5rem;
+    padding-left: 1rem; /* Einrücken wie im Beispiel */
+    cursor: pointer;
+}
+
+.product-card .store-select-link .icon {
+    margin-right: 0.5rem;
+}
+
+.product_header{
+    font-size: 1.2rem;
+    color: darkblue;
+    font-weight: bold;
+
+}
+
+/* Ensure images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fix navbar burger menu on mobile */
+.navbar-burger {
+    color: #5b2c2c;
+}
+/* Ensure dropdowns are visible on mobile */
+.navbar-dropdown {
+    border-top: none;
+}
+
+/* General Responsive Adjustments */
+@media screen and (max-width: 1023px) {
+    /* Tablet styles */
+    .navbar-menu {
+        background-color: #2c3e50;
+    }
+
+    .navbar-item, .navbar-link {
+        color: white !important;
+    }
+
+    .navbar-dropdown {
+        background-color: #3a5169;
+    }
+
+    .hero-body .title {
+        font-size: 2rem !important;
+    }
+
+    .hero-body .subtitle {
+        font-size: 1.1rem !important;
+    }
+}
+@media screen and (max-width: 480px) {
+    /* Small mobile devices */
+    .hero-body .title {
+        font-size: 1.5rem !important;
+    }
+
+    .hero-body .subtitle {
+        font-size: 0.9rem !important;
+    }
+
+    .product-name {
+        font-size: 0.9rem !important;
+    }
+
+    .current-price {
+        font-size: 1.3rem !important;
+    }
+
+    .anmeld {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+/* Make sure the mobile und tablet responsive */
+@media screen and (max-width: 768px) {
+    .navbar-brand {
+        justify-content: space-between;
+    }
+
+    .hero.is-medium .hero-body {
+        padding: 2rem 1.5rem;
+    }
+
+    .hero-body .columns {
+        flex-direction: column;
+    }
+
+    .hero-body .column.is-half {
+        width: 100%;
+        text-align: center !important;
+    }
+
+    .hero-body .title {
+        font-size: 1.8rem !important;
+        margin-bottom: 1rem;
+    }
+
+    .hero-body .subtitle {
+        font-size: 1rem !important;
+        margin-bottom: 1.5rem;
+    }
+
+    .header-image-placeholder {
+        margin-top: 1.5rem;
+    }
+
+    .level.is-mobile.is-flex-direction-column-mobile {
+        flex-direction: column;
+    }
+
+    .level-left, .level-right {
+        width: 100%;
+    }
+
+    .level-item h2.title {
+        margin-bottom: 1rem;
+    }
+
+    .footer .columns {
+        flex-direction: column;
+    }
+
+    .footer .column {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+
+    .columns.is-multiline {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .column.is-half-mobile {
+        width: 50%;
+    }
+    .hero-body{
+        margin-top: 50px;
+    }
+    .control.is-expanded {
+        width: 100%;
+    }
+     input.input.is-medium {
+        width: 100%;
+    }
+    .product-card {
+        margin: 0 auto 1.5rem;
+        max-width: 300px;
+    }
+    .footer {
+        text-align: center;
+    }
+    .footer ul {
+        margin-top: 0.5rem;
+    }
+    .footer li {
+        margin-bottom: 0.5rem;
+    }
+
+}
+
