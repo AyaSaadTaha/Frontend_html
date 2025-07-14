@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Mein Webshop</title>
+    <!-- Bulma CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <!-- Font Awesome für Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> <!-- Verwenden Sie Ihre bestehende style.css für Konsistenz -->
+    <style>
+        /* Zusätzliche oder überschreibende Stile für die Kontakt Seite */
+        .hero.is-primary.is-medium.kontakt-hero {
+            background: linear-gradient(135deg, #6190e8, #a7bfe8); /* Blauer Farbverlauf wie Login */
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .section-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .section-card .title {
+            color: #363636;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-card .subtitle {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .input.is-rounded, .textarea.is-rounded {
+            border-radius: 290486px; /* Stark abgerundet */
+            border-color: #dbdbdb;
+            transition: border-color 0.3s;
+        }
+
+        .input.is-rounded:focus, .textarea.is-rounded:focus {
+            border-color: #6190e8; /* Akzentfarbe beim Fokus */
+            box-shadow: 0 0 0 0.125em rgba(97, 144, 232, 0.25);
+        }
+
+        .textarea.is-rounded {
+            border-radius: 8px; /* Textarea weniger stark abgerundet */
+        }
+
+        .button.is-primary-gradient {
+            background: linear-gradient(to right, #6190e8, #a7bfe8); /* Blauer Button-Verlauf */
+            border: none;
+            color: white;
+            font-weight: bold;
+            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+        }
+
+        .button.is-primary-gradient:hover {
+            transform: translateY(-2px); /* Leichter Schwebeeffekt */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-info .icon-text {
+            margin-bottom: 1rem;
+            align-items: center;
+        }
+
+        .contact-info .icon {
+            color: #6190e8;
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .map-placeholder {
+            background-color: #e0e0e0;
+            height: 300px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 1.2rem;
+            border: 1px solid #ccc;
+        }
+
+        /* Responsivität */
+        @media screen and (max-width: 768px) {
+            .section-card {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+            .map-placeholder {
+                height: 200px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+<!-- Navigationsleiste (wie in index.html) -->
+<nav class="navbar is-fixed-top navbar-custom-bg" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item has-text-white is-size-2 has-text-weight-bold" href="#">
+                <div class="logo-container">
+                    <span class="logo-d">d</span>
+                    <span class="logo-m">m</span>
+                    <div class="logo-circle"></div>
+                </div>
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-end">
+                <a href="index2.html"  class="navbar-item has-text-white is-size-6 has-text-weight-medium hover:has-text-purple-200">
+                    Home
+                </a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a href="product.html" class="navbar-link has-text-white is-size-6 has-text-weight-medium hover:has-text-purple-200">
+                        Products
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="#Pflege">
+                            Pflege
+                        </a>
+                        <a class="navbar-item is-selected" href="#Haare">
+                            Haare
+                        </a>
+                        <a class="navbar-item" href="#Gesundheit">
+                            Gesundheit
+                        </a>
+
+                    </div>
+                </div>
+
+                <a href="ÜberUns.html" class="navbar-item has-text-white is-size-6 has-text-weight-medium hover:has-text-purple-200">
+                    Über Uns
+                </a>
+                <a href="Kontakt.html" class="navbar-item has-text-white is-size-6 has-text-weight-medium hover:has-text-purple-200">
+                    Kontakt
+                </a>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button  is-rounded has-text-weight-bold anmeld" target="_blank" href="login.html" >
+                            Anmelden
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero-Bereich für Kontakt -->
+<section class="hero is-primary is-medium kontakt-hero is-fullheight-with-navbar">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title is-1 has-text-white is-spaced">
+                Kontaktieren Sie uns
+            </h1>
+            <p class="subtitle is-4 has-text-white has-opacity-90">
+                Wir sind für Sie da – schreiben Sie uns oder rufen Sie uns an.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Hauptinhalt der Kontakt Seite -->
+<main class="section">
+    <div class="container">
+        <div class="columns is-desktop is-vcentered">
+            <div class="column is-two-thirds">
+                <div class="section-card">
+                    <h2 class="title is-2">Senden Sie uns eine Nachricht</h2>
+                    <p class="subtitle is-5">
+                        Wir freuen uns auf Ihre Anfrage und werden uns so schnell wie möglich bei Ihnen melden.
+                    </p>
+                    <form>
+                        <div class="field">
+                            <label class="label">Name</label>
+                            <div class="control has-icons-left">
+                                <input class="input is-medium is-rounded" type="text" placeholder="Ihr Name">
+                                <span class="icon is-small is-left"><i class="fas fa-user"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">E-Mail</label>
+                            <div class="control has-icons-left">
+                                <input class="input is-medium is-rounded" type="email" placeholder="Ihre E-Mail-Adresse">
+                                <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Betreff</label>
+                            <div class="control has-icons-left">
+                                <input class="input is-medium is-rounded" type="text" placeholder="Betreff Ihrer Nachricht">
+                                <span class="icon is-small is-left"><i class="fas fa-tag"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Nachricht</label>
+                            <div class="control">
+                                <textarea class="textarea is-medium is-rounded" placeholder="Ihre Nachricht an uns"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <button class="button is-primary-gradient is-medium is-fullwidth is-rounded">
+                                    Nachricht senden
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="column is-one-third">
+                <div class="section-card">
+                    <h2 class="title is-3">Unsere Kontaktdaten</h2>
+                    <div class="content contact-info">
+                        <p class="icon-text">
+                            <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                            <span>dm-drogerie markt GmbH + Co. KG<br>Am dm-Platz 1<br>76227 Karlsruhe</span>
+                        </p>
+                        <p class="icon-text">
+                            <span class="icon"><i class="fas fa-phone"></i></span>
+                            <span>+49 (0) 721 555555</span>
+                        </p>
+                        <p class="icon-text">
+                            <span class="icon"><i class="fas fa-envelope"></i></span>
+                            <span>info@mein-webshop.de</span>
+                        </p>
+                        <p class="icon-text">
+                            <span class="icon"><i class="fas fa-clock"></i></span>
+                            <span>Mo-Fr: 9:00 - 18:00 Uhr</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Footer-Bereich -->
+<footer class="footer footer-custom-bg has-text-white">
+    <div class="container">
+        <div class="columns is-multiline">
+            <div class="column is-one-quarter">
+                <p class="title is-4 has-text-white">Dm Shop</p>
+                <p class="has-text-grey-light">Ihr Online-Ziel für hochwertige Produkte und exzellenten Service.</p>
+            </div>
+
+            <div class="column is-one-quarter">
+                <p class="title is-5 has-text-white">Informationen</p>
+                <ul>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">Impressum</a></li>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">AGB</a></li>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">Datenschutz</a></li>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">Widerrufsrecht</a></li>
+                </ul>
+            </div>
+
+            <div class="column is-one-quarter">
+                <p class="title is-5 has-text-white">Kundenservice</p>
+                <ul>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">Kontakt</a></li>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">FAQ</a></li>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">Versand & Lieferung</a></li>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">Rücksendungen</a></li>
+                </ul>
+            </div>
+
+            <div class="column is-one-quarter">
+                <p class="title is-5 has-text-white">Folgen Sie uns</p>
+                <ul>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">Instagram</a></li>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">Facebook</a></li>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">Twitter</a></li>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Copyright-Informationen -->
+<div class="has-text-centered py-4 copyright-custom-bg has-text-grey-light is-size-7">
+    <div class="container">
+        &copy; 2025 dm-drogerie markt GmbH + Co. KG
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Burger-Menü für mobile Navigation
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        if ($navbarBurgers.length > 0) {
+            $navbarBurgers.forEach(el => {
+                el.addEventListener('click', () => {
+                    const target = el.dataset.target;
+                    const $target = document.getElementById(target);
+                    el.classList.toggle('is-active');
+                    $target.classList.toggle('is-active');
+                });
+            });
+        }
+    });
+</script>
+</body>
+</html>

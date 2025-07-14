@@ -1,0 +1,596 @@
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #f5f5f5; /* Bulma default background */
+}
+.anmeld{
+    background: linear-gradient(to bottom right, #4c51bf, #2a4365);
+}
+
+/* ---- Farbanpassungen ---- */
+/* Basierend auf dem Bild: Grüner Hintergrund, Blaues Logo/Text */
+:root {
+    --dm-green: #a7bfe8; /* Helle grüne Farbe aus dem Bild */
+    --dm-dark-green: #6190e8; /* Dunklere grüne Farbe */
+    --dm-blue: #0070c7; /* Blau für Text und Links */
+    --dm-light-green-bg: #e0f2d5; /* Sehr helles Grün für den Hintergrund der Textbox */
+}
+
+/* Navigationsleiste und Footer (Beibehaltung der ursprünglichen Farben) */
+.navbar-custom-bg,
+.footer-custom-bg {
+    background-color: #2c3e50; /* Dunkelblau-grau */
+}
+
+.copyright-custom-bg {
+    background-color: #212f3d; /* Noch dunkleres Blau-grau */
+}
+
+/* looooogo */
+/* Logo Styles */
+.logo-container {
+    position: relative;
+    width: 80px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-d, .logo-m {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: white;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.logo-d {
+    transform: translateX(5px);
+}
+
+.logo-m {
+    transform: translateX(-5px);
+}
+
+.logo-circle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #4c51bf, #2a4365);
+    border-radius: 50%;
+    z-index: 1;
+    transition: all 0.5s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Animationen */
+.logo-container:hover .logo-d {
+    transform: translateX(0) rotate(-10deg);
+    color: #a3bffa;
+}
+
+.logo-container:hover .logo-m {
+    transform: translateX(0) rotate(10deg);
+    color: #a3bffa;
+}
+
+.logo-container:hover .logo-circle {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #2a4365, #4c51bf);
+}
+
+/* Pulsierende Animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.logo-circle {
+    animation: pulse 4s infinite;
+}
+
+/* Für ein noch moderneres Aussehen */
+.logo-container {
+    perspective: 1000px;
+}
+
+.logo-d, .logo-m {
+    display: inline-block;
+    transform-style: preserve-3d;
+}
+
+.logo-container:hover .logo-d {
+    animation: floatD 3s ease-in-out infinite;
+}
+
+.logo-container:hover .logo-m {
+    animation: floatM 3s ease-in-out infinite;
+}
+
+@keyframes floatD {
+    0%, 100% { transform: translateY(0) rotateY(0); }
+    50% { transform: translateY(-10px) rotateY(10deg); }
+}
+
+@keyframes floatM {
+    0%, 100% { transform: translateY(0) rotateY(0); }
+    50% { transform: translateY(-10px) rotateY(-10deg); }
+}
+
+
+.product-card-custom-shadow {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.product-card-custom-shadow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* ---- Hero-Slider-Stile ---- */
+
+.hero-slider {
+    background-color: var(--dm-green);
+    height: 600px; /* Oder passen Sie die Höhe an */
+    overflow: hidden; /* Wichtig für die Bildpositionierung */
+    padding: 0 !important; /* Wichtig, um den Bulma Standard-Padding zu überschreiben */
+}
+
+.hero-body.p-0 { /* Stellt sicher, dass kein Padding im Hero-Body ist */
+    padding: 0 !important;
+}
+
+.hero-slide-content {
+    height: 100%;
+    /* Max-Breite auf 100% gesetzt, da container is-fullhd verwendet wird */
+    max-width: 100%;
+    margin: 0; /* Entfernt äußeren Margin, wenn container-fluid */
+}
+
+.hero-slide-columns {
+    height: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Linke Spalte: Produkte und Hintergrundbild */
+.product-image-column {
+    position: relative;
+    height: 100%;
+    background-color: white; /* Hintergrundfarbe, falls das Bild nicht die gesamte Fläche abdeckt */
+    overflow: hidden; /* Wichtig, um Überläufe von Bildern zu kontrollieren */
+}
+
+.product-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center; /* Bild wie im Beispiel rechts positionieren */
+}
+
+.product-animation-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Flexbox, um die Produkte innerhalb der Spalte zu zentrieren */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image {
+    position: absolute;
+    max-height: 80%; /* Die Größe der Produkte im Verhältnis zur Spalte */
+    object-fit: contain;
+}
+
+.product-left {
+    left: 10%; /* Beispielpositionierung */
+    top: 30%; /* Beispielpositionierung */
+    max-width: 250px; /* Max-Breite für das linke Produkt */
+    z-index: 2;
+}
+
+.product-right {
+    left: 30%; /* Beispielpositionierung */
+    top: 15%; /* Beispielpositionierung */
+    max-width: 400px; /* Max-Breite für das rechte Produkt */
+    z-index: 3;
+}
+
+.mivolis-logo-float {
+    position: absolute;
+    top: 15%; /* Beispielpositionierung */
+    left: 60%; /* Beispielpositionierung */
+    width: 100px;
+    animation: float 3s ease-in-out infinite; /* Animation für das schwebende Logo */
+    z-index: 4;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Pfeil-Navigation */
+.slider-nav-arrows {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    z-index: 10;
+}
+
+.slider-arrow {
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    cursor: pointer;
+    color: var(--dm-blue);
+    transition: background-color 0.3s;
+}
+
+.slider-arrow:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* Rechte Spalte: Textbox */
+.hero-text-column {
+    position: relative;
+    background-color: var(--dm-green); /* Hintergrundfarbe der rechten Seite (Hellgrün aus dem Bild) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.hero-text-box {
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    text-align: left;
+    background-color: white; /* Weiße Box mit Animation */
+}
+
+/* Anpassung der Schriftfarben in der Textbox */
+.hero-text-box .title,
+.hero-text-box .subtitle {
+    color: #333; /* Dunkelgrau für den Haupttext */
+}
+
+.hero-text-box .title .has-text-info-dark {
+    color: var(--dm-blue) !important; /* Blau für den Schlüsseltext "Bauch" */
+}
+
+.hero-text-box .icon-text .has-text-info-dark {
+    color: var(--dm-blue) !important; /* Blau für den Linktext */
+}
+
+
+/* ---- Allgemeine Produktkarten-Stile (Beibehalten) ---- */
+.header-image-container { /* Diese Klasse wird jetzt nicht mehr direkt verwendet, kann aber für andere Zwecke bleiben */
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    background-color: #1a1a1a;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.header-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+}
+
+.header-product-overlay {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.header-product-item {
+    background-color: #333;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    position: relative;
+    width: 120px;
+}
+
+.header-product-item .product-thumb {
+    width: 80px;
+    height: 80px;
+    background-color: #555;
+    margin: 0 auto 8px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+}
+
+.header-product-item .tag {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7em;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    font-weight: bold;
+}
+
+.header-product-item .tag.is-warning {
+    background-color: #ffdd57;
+    color: #363636;
+}
+
+.header-product-item .tag.is-danger {
+    background-color: #ff3860;
+    color: white;
+}
+
+.product-card {
+    position: relative;
+    border: 1px solid #dbdbdb;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: white;
+    padding-bottom: 1rem;
+}
+
+.product-card .tag.is-new {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ff3860;
+    color: white;
+    font-weight: bold;
+    z-index: 10;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+}
+
+.product-card .favorite-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #b5b5b5;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.2s ease-in-out;
+}
+
+.product-card .favorite-icon:hover {
+    color: #ff3860;
+}
+
+.product-card .product-image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 75%; /* 4:3 Aspect Ratio (300/400) */
+    overflow: hidden;
+}
+
+.product-card .product-image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 1rem;
+}
+
+.product-card .brand-logo-overlay {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 4px;
+    z-index: 11;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.product-card .card-content {
+    padding: 1rem;
+    text-align: left;
+}
+
+.product-card .price-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 0.5rem;
+}
+
+.product_header {
+    font-size: 2em;
+    font-weight: bold;
+    color: #363636;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #ededed;
+    padding-bottom: 0.5rem;
+}
+
+/* Responsive adjustments for product cards */
+@media screen and (max-width: 768px) {
+    .product-card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+
+/* 22222*/
+
+/* Erweiterte Animationen */
+@keyframes floatProduct {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.product-left {
+    animation: floatProduct 6s ease-in-out infinite;
+}
+
+.product-right {
+    animation: floatProduct 7s ease-in-out infinite reverse;
+}
+
+.hero-text-box {
+    animation: pulse 8s ease-in-out infinite;
+}
+
+/* Parallax-Effekt für Hintergrund */
+.product-bg-image {
+    transition: transform 0.5s ease-out;
+}
+
+.hero-slider:hover .product-bg-image {
+    transform: scale(1.02);
+}
+
+/* Responsive Anpassungen */
+@media screen and (max-width: 1023px) {
+    .hero-slider {
+        height: auto;
+    }
+
+    .hero-slide-columns {
+        flex-direction: column;
+    }
+
+    .product-image-column,
+    .hero-text-column {
+        width: 100% !important;
+        height: 50vh;
+    }
+
+    .product-left {
+        max-width: 150px;
+        left: 5%;
+    }
+
+    .product-right {
+        max-width: 200px;
+        left: 25%;
+    }
+
+    .hero-text-box {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .product-image-column,
+    .hero-text-column {
+        height: 40vh;
+    }
+
+    .hero-text-box .title {
+        font-size: 1.5rem !important;
+    }
+
+    .hero-text-box .subtitle {
+        font-size: 1rem !important;
+    }
+}
+.product-card {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.product-card:hover {
+    transform: translateY(-10px) rotateY(5deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.product-image-wrapper img {
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image-wrapper img {
+    transform: scale(1.1);
+}
+.anmeld {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.anmeld:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.anmeld:hover:before {
+    left: 100%;
+}
+
+.anmeld:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.navbar-item ,.navbar-link {
+    background-color: transparent !important;
+}
+
+/* Add this to your style2.css */
+.product-card {
+    transition: all 0.3s ease;
+}
+
+.animate__fadeIn {
+    animation-duration: 0.3s;
+}
+
+.animate__fadeOut {
+    animation-duration: 0.3s;
+}
+.fa-star{
+    animation: fa-star 2s infinite;
+    color: rgba(131, 131, 52, 0.54);
+}

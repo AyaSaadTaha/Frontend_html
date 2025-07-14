@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anmelden - Mein Webshop</title>
+    <!-- Bulma CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <!-- Font Awesome für Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .hero.is-fullheight {
+            /* Hintergrund mit Farbverlauf */
+            background: linear-gradient(135deg, #a7bfe8, #6190e8); /* Blauer Farbverlauf */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .login-card {
+            max-width: 400px;
+            width: 100%;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Starker Schatten */
+            background-color: white;
+            animation: fadeInScale 0.6s ease-out; /* Animation beim Laden */
+        }
+
+        .login-card .title {
+            color: #363636;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .login-card .subtitle {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .field:not(:last-child) {
+            margin-bottom: 1.5rem;
+        }
+
+        .input.is-medium, .button.is-medium {
+            height: 3rem; /* Einheitliche Höhe */
+        }
+
+        .input.is-rounded {
+            border-radius: 290486px; /* Stark abgerundet */
+            border-color: #dbdbdb;
+            transition: border-color 0.3s;
+        }
+
+        .input.is-rounded:focus {
+            border-color: #6190e8; /* Akzentfarbe beim Fokus */
+            box-shadow: 0 0 0 0.125em rgba(97, 144, 232, 0.25);
+        }
+
+        .button.is-primary-gradient {
+            background: linear-gradient(to right, #6190e8, #a7bfe8); /* Blauer Button-Verlauf */
+            border: none;
+            color: white;
+            font-weight: bold;
+            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+        }
+
+        .button.is-primary-gradient:hover {
+            transform: translateY(-2px); /* Leichter Schwebeeffekt */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .button.is-create-account {
+            background-color: #f0f0f0; /* Heller Hintergrund */
+            color: #6190e8; /* Akzentfarbe */
+            border: 1px solid #6190e8;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .button.is-create-account:hover {
+            background-color: #6190e8;
+            color: white;
+        }
+
+        .forgot-password {
+            display: block;
+            text-align: right;
+            margin-top: 0.75rem;
+            color: #6190e8;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .forgot-password:hover {
+            color: #4b78d6;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo-container .icon {
+            font-size: 4rem;
+            color: #6190e8;
+            margin-bottom: 0.5rem;
+        }
+
+        .logo-container .logo-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #363636;
+        }
+
+        /* Animation für das Laden der Karte */
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Responsivität für kleinere Bildschirme */
+        @media screen and (max-width: 768px) {
+            .login-card {
+                margin: 1rem; /* Etwas Abstand an den Rändern */
+                padding: 1.5rem;
+            }
+            .logo-container .icon {
+                font-size: 3rem;
+            }
+            .logo-container .logo-text {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="style2.css">
+
+</head>
+<body>
+<!-- Navigationsleiste -->
+<nav class="navbar is-fixed-top navbar-custom-bg" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item has-text-white is-size-2 has-text-weight-bold" href="#">
+                <div class="logo-container">
+                    <span class="logo-d">d</span>
+                    <span class="logo-m">m</span>
+                    <div class="logo-circle"></div>
+                </div>
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-end">
+                <a href="index2.html"  class="navbar-item has-text-white is-size-6 has-text-weight-medium hover:has-text-purple-200">
+                    Home
+                </a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a href="product.html" class="navbar-link has-text-white is-size-6 has-text-weight-medium hover:has-text-purple-200">
+                        Products
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="#Pflege">
+                            Pflege
+                        </a>
+                        <a class="navbar-item is-selected" href="#Haare">
+                            Haare
+                        </a>
+                        <a class="navbar-item" href="#Gesundheit">
+                            Gesundheit
+                        </a>
+
+                    </div>
+                </div>
+
+                <a href="ÜberUns.html" class="navbar-item has-text-white is-size-6 has-text-weight-medium hover:has-text-purple-200">
+                    Über Uns
+                </a>
+                <a href="Kontakt.html" class="navbar-item has-text-white is-size-6 has-text-weight-medium hover:has-text-purple-200">
+                    Kontakt
+                </a>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button  is-rounded has-text-weight-bold anmeld" target="_blank" href="login.html" >
+                            Anmelden
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<section class="hero is-fullheight">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <div class="login-card">
+                <div class="logo-container">
+                        <span class="icon is-large">
+                            <i class="fas fa-lock"></i> <!-- Schloss-Icon für die Login-Seite -->
+                        </span>
+                </div>
+
+                <h1 class="title is-3">Anmelden</h1>
+                <form>
+                    <div class="field">
+                        <p class="control has-icons-left">
+                            <input class="input is-medium is-rounded" type="email" placeholder="E-Mail oder Benutzername">
+                            <span class="icon is-small is-left">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                        </p>
+                    </div>
+
+                    <div class="field">
+                        <p class="control has-icons-left">
+                            <input class="input is-medium is-rounded" type="password" placeholder="Passwort">
+                            <span class="icon is-small is-left">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                        </p>
+                        <a href="#" class="forgot-password">Passwort vergessen?</a>
+                    </div>
+
+                    <div class="field">
+                        <p class="control">
+                            <button class="button is-primary-gradient is-medium is-fullwidth is-rounded">
+                                Anmelden
+                            </button>
+                        </p>
+                    </div>
+
+                    <hr> <!-- Trennlinie -->
+
+                    <div class="field">
+                        <p class="control">
+                            <button class="button is-create-account is-medium is-fullwidth is-rounded">
+                                Neuen Account erstellen
+                            </button>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer-Bereich -->
+<footer class="footer footer-custom-bg has-text-white">
+    <div class="container">
+        <div class="columns is-multiline">
+            <div class="column is-one-quarter">
+                <p class="title is-4 has-text-white">Dm Shop</p>
+                <p class="has-text-grey-light">Ihr Online-Ziel für hochwertige Produkte und exzellenten Service.</p>
+            </div>
+
+            <div class="column is-one-quarter">
+                <p class="title is-5 has-text-white">Informationen</p>
+                <ul>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">Impressum</a></li>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">AGB</a></li>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">Datenschutz</a></li>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">Widerrufsrecht</a></li>
+                </ul>
+            </div>
+
+            <div class="column is-one-quarter">
+                <p class="title is-5 has-text-white">Kundenservice</p>
+                <ul>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">Kontakt</a></li>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">FAQ</a></li>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">Versand & Lieferung</a></li>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">Rücksendungen</a></li>
+                </ul>
+            </div>
+
+            <div class="column is-one-quarter">
+                <p class="title is-5 has-text-white">Folgen Sie uns</p>
+                <ul>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">Instagram</a></li>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">Facebook</a></li>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">Twitter</a></li>
+                    <li><a href="#" class="has-text-grey-light hover:has-text-white">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Copyright-Informationen -->
+<div class="has-text-centered py-4 copyright-custom-bg has-text-grey-light is-size-7">
+    <div class="container">
+        &copy; 2025 dm-drogerie markt GmbH + Co. KG
+    </div>
+</div>
+</body>
+</html>
